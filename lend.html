@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Add books for lend</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+
+            background: rgba(66, 66, 66, 1);
+        }
+
+        .row {
+            background: rgba(189, 189, 189, 1);
+            border-radius: 10px;
+            box-shadow: 12px 12px 22px rgb(197, 194, 196);
+        }
+
+        img {
+            border-top-left-radius: 30px;
+            border-bottom-left-radius: 30px;
+        }
+
+        .btn1 {
+
+            border: none;
+            outline: none;
+            height: 50px;
+            width: 58%;
+            background-color: rgba(66, 66, 66, 1);
+            color: rgba(189, 189, 189, 1);
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .btn1:hover {
+            background: white;
+            border: 1px solid;
+            color: black;
+        }
+    </style>
+</head>
+<header>
+    <!-- Logo -->
+    <a href="index.html"><img src="logo.png" alt="logo"></a>
+
+    <!-- navigation bar for pages-->
+    <ul class="navigation">
+        <li class="navigation"><a href="index.html">Home page</a></li>
+        <li class="navigation"><a href="login.html">Log in</a></li>
+        <li class="navigation"><a href="aboutUs.html">About us</a> </li>
+        <li class="navigation"><a href="borrowingBooks.html">Borrowing Books</a></li>
+        <li class="navigation"><a href="E_Books.html">E-Books</a> </li>
+        <li class="navigation"><a href="suggestions.html">Suggestions</a></li>
+        <li class="navigation"><a href="fun.html">Fun</a> </li>
+        <li class="navigation"><a href="questionnaire.html">Questionnaire</a></li>
+        <li class="navigation"><a href="contactUs.html">Contact Us</a></li>
+
+    </ul>
+</header>
+
+<body>
+
+    <section class="Form my-5 mx-5" id="login">
+        <div class="container">
+            <div class="row no-guuter">
+                <div class="col-lg-5">
+                    <img src="lend.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="col-lg-7 px-10 pt-10">
+                    <br />
+                    <br />
+                    <h1 class="font-weight-bold py-3">Add books for lend</h1>
+                    <form action="https://httpbin.org/anything"  method="post">
+                        <div class="form-row">
+                            <div class="col-lg-7">
+                                <label>Name of book: <input type="text" placeholder="Name of book"
+                                        class="form-control"></label>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-lg-7">
+                                <label> Author: <input type="text" placeholder="Authour" class="form-control"></label>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-lg-7">
+                                <label>write here the overview of the book</label>
+                                <textarea class="form-control" row="100" cols="30">
+                            </textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-lg-7 my-3 my-2">
+                                <label>Select the type of book</label>
+                                <select name="Type of the book">
+                                    <option> Science </option>
+                                    <option> Art </option>
+                                    <option> Education </option>
+                                    <option> Kids & Teens </option>
+                                    <option> Other </option>
+                                </select>
+
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-lg-7">
+                                <label> please write your phone number: <input type="text" class="form-control"></label>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-lg">
+                                <button type="submit" value="submit" class="btn1 mt-3 mb-5"> Send </button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</body>
+
+<footer>
+    <div class="bottom1">
+        <br>
+        <p> &copy; 2022 Designed by Ethar, Waad, Ghaidaa</p>
+    </div>
+</footer>
+
+</html>

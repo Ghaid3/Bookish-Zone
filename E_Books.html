@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Books</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="electronic.css">
+     <!------------------------------------ JavaScript Code------------------------------------------>
+    <script type="Text/JavaScript">
+    /* Constructor function for BookReviw objects 
+   function has 3 parameters title, reviwe, numOfStars which object has them as properties */    
+    function BookReviwe(title, reviwe, numOfStars){
+        this.bookTitle= title;
+        this.bookReviwe= reviwe;
+        this.bookStars= numOfStars;
+    }
+    //create an array with BookReviwe object elemnts
+    // so we created the BookReviwe object directly inside the array 
+    let booksReview = [ new BookReviwe("The Power of Now", "This book is an excellent guide to shutting of your brain noise. We let our brains run us mad most of the time, and never really stop to enjoy the space we are in. Always dwelling over the past, or fretting about the future. This book points out that the future is 100% unpredictable (so stop making up stories about what is going to happen when you have absolutely NO IDEA) and to stop worrying about the past because no amount of energy devoted to the past will change it. Instead, be in the now; be present - enjoy what you have right in front of you. Experience it, because in one second it is gone, and you will never have the chance to enjoy it again", "5"),
+                        new BookReviwe("The 5 Second Rule", "Short, little repetitive, but totally motivating! Worth a reread when my mojo is dead", "4"),
+                        new BookReviwe("Zero to One", "There are several good parts in this book and I've felt some of my views shift as a result of reading the book (which is all you can ask for).A lot of Peter's arguments are supported with examples and anecdotes which is great because it grounds the discussion, but I also kept thinking that some seemed cherry picked. In a pool of 20 successful companies it seems it would be easy to always find the one that fits a narrative. Regardless, interesting read; These are useful ideas to be aware of", "3"),
+                        new BookReviwe("The 5 Second Rule", "Sorry but I can't recommend this one. It felt overly repetitive, and the testimonials were of no interest to me. I originally gave it a three, but I’m downgrading it to 2.5 because the only thing I’ve retained is that you must make the decision to act in the first five seconds.","2"),
+                        new BookReviwe("The Power of Now","It's the way this book made me feel like I was in a University lecture","3"),
+                        new BookReviwe("Zero to One","So, you'd think a multi-billionaire would have some great insights on start-ups or some fun tech bubble experiences to share. There were some glimmers, but nope, this is not that book. This book reeks of a nerd trying to portray himself off as a renaissance man. Being able to codify experience into theories can be a difficult mental feat, but for those theories to be of value to others or be useful in predicting future events is quite another. There are three reviews printed on the book from Mark Zuckerberg, Elon Musk and Nassim Nicholas Taleb, all very misleading. I think less of them now. This book will continue to get praise from idiots who glorify the wealthy and the successful. For those of us seeking knowledge, let's hope he writes another one about his experiences. Also, he probably won't do it, but it'd really be fun for us outsiders if he shared his insider experience in the tech/start-up sector. But alas, that'd bring the gods down to our human level","1"),
+                        new BookReviwe("The Art of Work","I understand that Jeff and/or publishers titled this book in such a way as to hit a larger audience. However, this book is more about finding your God-given purpose/calling than it is about your work. I get that they go hand-in-hand. It's FULL of nuggets that you can use for conversations with others about determining what they want to do 'when they grow up', even if they are 50 years old. GREAT work, Jeff! Congratulations on another well-written book!","5")];
+
+                        
+     /* displayBooksReviewTable() function with no parameter 
+        this function dynamically display information from the booksReview arrays 
+        into the XHTML table (empty row table with header row and needed format only)
+        
+        >> The table has 3 column.
+    */                    
+    function displayBooksReviewTable()
+    {
+        /* to delet table data when call function again,
+           this actually use it when user add new row 
+           so we update the table without display it repeatedly*/
+        document.getElementById('BookReviweTable').innerHTML="";
+        var BookReviweTable= document.getElementById('BookReviweTable'); //get table and save it in BookReviweTable variable to use it in this function 
+         // to go through all array element (BookReviwe object)
+        for (let review of  booksReview){
+        // add table with one row for each object and three cells for 3 object properties 
+        // use it to dynamically disblay data In XHTML table 
+        var tr = BookReviweTable.insertRow();// insetr table row <tr> (one only for one object)
+        var td = document.createElement('td');//add <td> element
+        td = tr.insertCell(0); // Adding <td> in <tr>
+        td.innerHTML = review.bookTitle; // display title propertie in first cell in the the row
+        var td = document.createElement('td');//add <td> element
+        td = tr.insertCell(1); // Adding <td> in <tr>
+        td.innerHTML = review.bookReviwe; // display  review propertie in second cell in the the row
+        var td = document.createElement('td');//add <td> element
+        td = tr.insertCell(2); // Adding <td> in <tr>
+        td.innerHTML = review.bookStars; // display number of stars propertie in third cell in the the row
+        } //end of for loop
+    } //end of displayBooksReviewTable function
+    
+    /*addUserData() function with no parametr 
+      it use the values of form which user enter to add them into booksReview array as object 
+      then call  displayBooksReviewTable() function to update the table with new row which has inputs user
+    */
+    function addUserData() {
+         // save inputs user in variables 
+        var title = document.getElementById('title').value;
+        var review = document.getElementById('review').value;   
+        var stars= document.getElementById('stars').value;
+       // add inputs user as new Book object to booksReview array
+        booksReview.push(new BookReviwe(title,review,stars));
+        //call displayBooksReviewTable() function
+        displayBooksReviewTable();  
+    } // end of addUserData function
+
+        
+    // to call displayBooksReviewTable() function when load  XHTML bage 
+    window.onload = () =>  {
+    displayBooksReviewTable(); };
+
+    
+    /* search() function without parameter, we use it to search for title or number of book stars in table 
+       If found it --> alert show Found.
+       If not found it --> alert show Not found.
+    */
+    function search() {
+        const valueToSearch= document.getElementById('search1').value;  //save user input value in variable to search it 
+        var found= false;   //put found to false until found
+        //use loop to go through all booksInformation elemnts
+        for (var info of   booksReview){
+        //see if it eqaul to any title or stars num
+        if (valueToSearch==info.bookTitle || valueToSearch==info.bookStars){
+            found= true; //if yes, then found 
+        }} //end of for loop 
+
+         //display alert to show found or not   
+        if (found) 
+        { alert("YSE Found it! \n The title or stars number you entered is in suggestions");}
+        else 
+        { alert("Ohhh, Not Found! \n The title or stars numberyou entered is not in suggestions");}
+    } //end of search function
+
+            </script>
+</head>
+<style type="text/css">
+    table{
+    border: thick solid rgb(52, 52, 51);
+    border-collapse: collapse;
+    margin: 50px;
+    background: linear-gradient(to right, rgb(187, 185, 180), rgb(247, 196, 247));
+    }
+    caption{
+        font-size:x-large;
+        font-family: 'Georgia';
+        color: rgb(112, 8, 65);
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        text-shadow: 2px 2px 3px rgb(247, 196, 247);
+    }
+    th{border: thin solid rgb(19, 42, 84);
+    color:rgb(56, 52, 52);
+    font-size:medium;
+    font-style: bold;
+    font-family: 'cursive';}
+    td{
+    border: thin solid rgb(19, 42, 84);
+    color:black;
+    font-size:medium;
+    font-style: bold;
+    font-family: 'cursive';
+    }
+    label{
+    font-style: bold;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    }
+    h2{
+    color: rgb(112, 8, 65);
+    text-shadow: 3px 3px 4px rgb(220, 140, 174);
+    font-style: bold;
+    font-family: 'Georgia';
+    }
+    h3{
+    color: rgb(220, 140, 174);
+    text-decoration: underline;
+    font-style: bold;
+    font-family: 'Georgia';
+    }
+
+    h5{
+    color: rgba(103, 74, 107, 0.488);
+    font-style: bold;
+    font-family: 'Georgia';
+    }
+    .botton{
+    border:thick black;
+    border-radius: 5PX;
+    font-size: medium;
+    background-color:rgb(101, 67, 95);
+    color:white;
+    text-align: center;
+    width: 100px;
+    height: 30px;
+    }
+    
+
+</style>
+
+<!------------------------------ Header ------------------------------>
+<header>
+    <!-- Logo -->
+    <a href="index.html"><img src="logo.png" alt="logo"></a>
+
+    <!-- navigation bar for pages-->
+    <ul class="navigation">
+        <li class="navigation"><a href="index.html">Home page</a></li>
+        <li class="navigation"><a href="login.html">Log in</a></li>
+        <li class="navigation"><a href="aboutUs.html">About us</a> </li>
+        <li class="navigation"><a href="borrowingBooks.html">Borrowing Books</a></li>
+        <li class="navigation"><a href="E_Books.html">E-Books</a> </li>
+        <li class="navigation"><a href="suggestions.html">Suggestions</a></li>
+        <li class="navigation"><a href="funpage.html">Fun</a> </li>
+        <li class="navigation"><a href="calculate.html">Calculate</a> </li>
+        <li class="navigation"><a href="questionnaire.html">Questionnaire</a></li>
+        <li class="navigation"><a href="contactUs.html">Contact Us</a></li>
+
+    </ul>
+</header>
+
+
+<form>
+
+    <body>
+        <div class="all">
+            <div class="e-book">
+
+                <div class="title"> Electronic books</div>
+
+                <div class="books">
+                    <div class=" b1">
+                        <img src="download.PNG" class="img1">
+                        <h1 class="h"> Give And Take</h1>
+                        <a class="bb1" href="Give and Take.pdf">
+                            <p1 class="p">Read Now</p1>
+                        </a>
+                    </div>
+
+
+
+
+
+
+                    <div class=" b1">
+                        <img src="rule.jpg" class="img1">
+                        <h1 class="h"> The Five Second Ruls</h1>
+                        <a class="bb1" href="The 5 Second Rule.pdf">
+
+                            <p1 class="p">Read Now</p1>
+                        </a>
+                    </div>
+
+
+                    <div class=" b1">
+
+                        <img src="work.jpg" class="img1">
+                        <h1 class="h"> The Art Of Work</h1>
+                        <a class="bb1" href="The Art of Work.pdf">
+                            <p1 class="p">Read Now</p1>
+                        </a>
+                    </div>
+
+
+
+                    <div class=" b1">
+                        <img src="rich.jpg" class="img1">
+                        <h1 class="h"> Rich Dad Poor Dad</h1>
+                        <a class="bb1" href="Rich Dad Poor Dad.pdf">
+                            <p1 class="p">Read Now</p1>
+                        </a>
+                    </div>
+
+
+
+
+                    <div class=" b1">
+                        <img src="m.png" class="img1">
+                        <h1 class="h"> Mastery</h1>
+                        <a class="bb1" href="Mastery.pdf">
+                            <p1 class="p">Read Now</p1>
+                        </a>
+                    </div>
+
+
+
+
+                    <div class=" b1">
+                        <img src="zero.jpg" class="img1">
+                        <h1 class="h"> One To Zero</h1>
+                        <a class="bb1" href="Zero to One.pdf">
+                            <p1 class="p">Read Now</p1>
+                        </a>
+                    </div>
+
+
+
+                    <div class=" b1">
+                        <img src="wing.png" class="img1">
+                        <h1 class="h">Wing Of Fire</h1>
+                        <a class="bb1" href="Wings of fire.pdf">
+
+                            <p1 class="p">Read Now</p1>
+                        </a>
+                    </div>
+
+                    <div class=" b1">
+                        <img src="power.jpg" class="img1">
+                        <h1 class="h">The Power Of Now</h1>
+                        <a class="bb1" href="The Power of Now.pdf">
+
+                            <p1 class="p">Read Now</p1>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+</form>
+<br /> <br /> <br />
+
+<table cellpadding="20px">
+    <caption>Here are some book reviews</caption>
+    <br/>  <br/>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Reviwe</th>
+            <th>Number of starts</th>
+        </tr>
+    </thead>
+
+    <tbody id="BookReviweTable">
+
+
+    </tbody>
+</table>
+
+<form action="" style="margin: 50px;">
+    <h2>Do you read one on electronic books a bove?</h2>
+    <br/> 
+    <h3>Please enter the book reviwe here and then click the Add button</h3>
+
+    <div style="position: absolute; left: 1000px;">
+        <h3>Here You can seach for title or stars number only</h3>
+        <br/> 
+        <h5 style="margin-bottom: 15px;">NOTE: You should enter fully name</h5>
+        <button type="button" onclick="search()" class= "botton" > Search</button>
+        <input id="search1">
+    </div>
+    <br/> 
+    <label>Title: <input type="text" id="title"> </label>
+    <br /><br />
+    <label>Reviwe: </label> <br />
+    <textarea id="review"></textarea>
+    <br /><br />
+    <label>How Many stars(1 - 5)?: <input type="text" id="stars" size="4"> </label>
+    <br /><br />
+    <input type="button" value="ADD" class= "botton" style="position: relative; left: 100px;" onclick="addUserData()">
+    <input type="reset" value="RESET" class= "botton" style="position: relative; left: 100px;">
+
+</form>
+</body>
+
+<footer>
+    <div class="bottom1">
+        <br>
+        <p> &copy; 2022 Designed by Ethar, Waad, Ghaidaa</p>
+    </div>
+</footer>
+
+</html>

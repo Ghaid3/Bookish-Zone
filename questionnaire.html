@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Qs.css">
+
+
+    <script type="text/Javascript">
+
+      function validateForm() {//  create objects  for function of  validation
+          var email = document.getElementById("email").value;
+          var age = document.getElementById("age").value;
+          var day = document.getElementById("day").value;
+      
+          if (email == "") {//check for input of email if it is available
+            alert("place enter your email");
+            return false;
+        
+          }
+        
+          if(email.indexOf("@", 0) < 0) {//use can use pattern search
+                  alert("Please enter a valid e-mail address.");
+                   return false;
+            }
+        if(email.indexOf(".", 0) < 0) {//use can use pattern search
+                   alert("Please enter a valid e-mail address.");
+                   return false;
+            }
+      
+      
+         if (age == "") {// check for input of age if it is available
+            alert("place enter the answer(age)");
+            age.focus();
+            return false; 
+        
+          }
+      
+      
+          //Using pattern search to make sure that age has digits only
+          // and determine range to make sure the age in between (1- 99)
+         //otherwise display error message 
+        if((age.search(/\D/) != -1 ) || (age<0 || age>100)) { 
+              alert("Incorrect age");
+               return false;}
+      
+         
+      if (day == "") {// check for input of day if it is available
+            alert("place enter the answer(day/s)");
+            return false;
+      }
+        } 
+          </script>
+
+    <style type="text/css">
+        body {
+            background-image: url(books.Jpg);
+            background-size: auto;
+            height: outo;
+
+        }
+
+        .parent {
+           background: linear-gradient(to right, rgb(187, 185, 180), rgb(222, 179, 95));
+            width: 700px;
+            height: 700px;
+            margin: 50px auto;
+            border-radius: 20px;
+
+        }
+
+        h1 {
+            text-align: center;
+            position: relative;
+            top: 50px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        }
+
+
+        .cont {
+           text-align: left;
+           margin-left: 50px;
+        }
+
+
+        #email {
+            height: 21px;
+            width: 240px;
+
+        }
+
+        #age {
+            height: 21px;
+            width: 80px;
+        }
+
+        #day {
+            height: 21px;
+            width: 130px;
+        }
+
+        label {
+
+            font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+
+        }
+        .submit{
+            margin-top: 50px;
+            width: 100px;
+            height: 40px;
+            background-color: white;
+            color: black;
+            font-size: medium;
+            font-weight: bold;
+        
+        }
+    </style>
+</head>
+<!------------------------------ Header ------------------------------>
+<header>
+    <!-- Logo -->
+    <a href="index.html"><img src="logo.png" alt="logo"></a>
+
+    <!-- navigation bar for pages-->
+    <ul class="navigation">
+        <li class="navigation"><a href="index.html">Home page</a></li>
+        <li class="navigation"><a href="login.html">Log in</a></li>
+        <li class="navigation"><a href="aboutUs.html">About us</a> </li>
+        <li class="navigation"><a href="borrowingBooks.html">Borrowing Books</a></li>
+        <li class="navigation"><a href="E_Books.html">E-Books</a> </li>
+        <li class="navigation"><a href="suggestions.html">Suggestions</a></li>
+        <li class="navigation"><a href="funpage.html">Fun</a> </li>
+        <li class="navigation"><a href="calculate.html">Calculate</a> </li>
+        <li class="navigation"><a href="questionnaire.html">Questionnaire</a></li>
+        <li class="navigation"><a href="contactUs.html">Contact Us</a></li>
+
+    </ul>
+</header>
+
+<body>
+
+    <div class="parent">
+        <h1>Quetionnaire</h1>
+        <div class="cont">
+
+            <form action="https://formsubmit.co/bookishzone2022@gmail.com"  method="post" id="myForm">
+                <label for="email">Please enter your email: </label>
+                <input type="text" id="email" placeholder="Enter your email">
+
+                <br /><br />
+                <label> Have you ever seen an idea similar to this website?</label>
+                <input name="rad2" type="radio" checked="checked">yes
+                <input name="rad2" type="radio">No
+                <br /><br />
+
+                <label> How was the borrowing via the site?</label>
+                <input name="rad" type="radio" checked="checked"> bad
+                <input name="rad" type="radio"> good
+                <input name="rad" type="radio"> very good
+                <br /><br />
+
+                <label for="age">In your opinion, what is the appropriate age to start registering on our site?</label>
+                <input type="text" placeholder="years old" id="age">
+                <br /><br />
+
+                <label for="day">
+                    How long did the book take to reach you (days)?</label>
+                <input type="text" placeholder="one word" id="day">
+                <br /><br />
+
+                <label>which sections did you like more:</label> <br />
+                <input type="checkbox" class="check"><label>borrowing section</label> <br />
+                <input type="checkbox" class="check"><label>E-books</label> <br />
+                <input type="checkbox" class="check"><label>fun page</label> <br />
+                <input type="checkbox" class="check"><label>Suggestions</label> <br />
+                <br /><br />
+                <div>
+
+                    <input type="submit" name="submit" class="submit">
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+<script type="text/javascript">
+
+    document.getElementById("myForm").onsubmit = validateForm;
+    document.getElementById("email").onblur = validateForm;
+
+</script>
+
+<footer>
+    <div class="bottom1">
+        <br>
+        <p> &copy; 2022 Designed by Ethar, Waad, Ghaidaa</p>
+    </div>
+</footer>
+
+</html>

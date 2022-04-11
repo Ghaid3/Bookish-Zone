@@ -1,0 +1,75 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url(books.Jpg);
+    background-size: auto ;
+    height: auto;
+    
+}
+
+.parent{
+    background-color: rgb(182, 175, 175);
+    width: 500px;
+    height: 500px;
+    margin: 50px auto;
+    text-align: center;
+  text-align: center;
+  border-radius: 20px;
+  
+}
+
+h1{
+    text-align: center;
+    position: relative;
+    top: 60px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+   
+}
+
+
+
+
+.cont{
+    margin: 0% auto;
+    background-color:(182, 175, 175);
+    margin-top: 160px;
+    height: 400px;
+}
+
+
+.box1, .box2 {
+    height: 30px;
+    width: 210px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    border: 2px solid black;
+    text-align: center;
+    border-radius: 4px;
+
+}
+
+
+.box3{
+    height: 100px;
+    width: 420px;
+    border: 2px solid black;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.sent{
+   border: 2px solid  rgb(240, 233, 233);
+   border-radius: 3px;
+   text-decoration: none;
+   background-color: rgb(68, 68, 60);
+   font-size: medium;
+   margin-top: 10px;
+   height: 30px;
+   width: 90px;
+  color: beige;
+   margin-inline-end: 300px;
+}

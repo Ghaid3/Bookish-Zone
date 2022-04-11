@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Calculate</title>
+
+  <style>
+    h1 {
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      margin-left: 14%;
+      color: rgb(255, 255, 255);
+      letter-spacing: 0.5px;
+    }
+
+    .r1 {
+      background-color: rgb(49, 48, 48);
+      border-radius: 30px;
+      border: 8px solid rgb(248, 157, 207);
+      height: 700px;
+      width: 500px;
+      margin-left: 33%;
+      margin-top: 12%;
+      margin-bottom: 12%;
+
+    }
+
+    div label {
+      color: rgb(255, 255, 255);
+    }
+
+    .inp {
+      margin-left: 14%;
+      margin-bottom: 25px;
+
+    }
+
+    .B1 {
+
+
+      padding: 16px 32px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      transition-duration: 0.4s;
+      cursor: pointer;
+      background-color: white;
+      color: black;
+      border: 2px solid #555555;
+      height: 6px;
+      width: 200px;
+      margin-right: 16px;
+      padding-bottom: 30px;
+      border-radius: 8px;
+
+    }
+
+    .B1:hover {
+      background-color: #555555;
+      color: white;
+    }
+
+    .container101 {
+      display: flex;
+      margin-bottom: 100px;
+
+    }
+
+    #s {
+      height: 110px;
+      width: 150px;
+      background-color: rgb(248, 157, 207);
+      color: rgb(255, 255, 255);
+      margin-left: 30px;
+      border-radius: 8px;
+      border: 2px solid #555555;
+      text-align: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: bold;
+    }
+  </style>
+  <script type="text/javascript" src="calculat.js"></script>
+</head>
+<!------------------------------ Header ------------------------------>
+<header>
+  <!-- Logo -->
+  <a href="index.html"><img src="logo.png" alt="logo"></a>
+
+  <!-- navigation bar for pages-->
+  <ul class="navigation">
+      <li class="navigation"><a href="index.html">Home page</a></li>
+      <li class="navigation"><a href="login.html">Log in</a></li>
+      <li class="navigation"><a href="aboutUs.html">About us</a> </li>
+      <li class="navigation"><a href="borrowingBooks.html">Borrowing Books</a></li>
+      <li class="navigation"><a href="E_Books.html">E-Books</a> </li>
+      <li class="navigation"><a href="suggestions.html">Suggestions</a></li>
+      <li class="navigation"><a href="funpage.html">Fun</a> </li>
+      <li class="navigation"><a href="calculate.html">Calculate</a> </li>
+      <li class="navigation"><a href="questionnaire.html">Questionnaire</a></li>
+      <li class="navigation"><a href="contactUs.html">Contact Us</a></li>
+
+  </ul>
+</header>
+
+<body style="background: linear-gradient(to right, rgb(187, 185, 180), rgb(247, 196, 247));">
+
+  <div class="r1">
+    <h1 style="margin-top: 8%; margin-bottom: 5%;">Let's calculate the price!</h1>
+
+    <div>
+      <form action="https://httpbin.org/anything" method="post" name="form1">
+
+        <div class="inp">
+          <label>Number of borrowed books:</label> <br> <br>
+          <input type="text" placeholder="Num borrowed books" id="inp1" required>
+        </div>
+        <div class="inp">
+          <label>Your Age: </label> <br> <br>
+          <input type="text" placeholder="enter your age" id="inp2" required>
+        </div>
+        <div class="inp">
+          <label>Are you student:</label> <br> <br>
+          <input type="radio" id="inp3" name="y">
+          <label style="padding-right: 25px;">Yes </label>
+          <input type="radio" checked id="inp4" name="y">
+          <label>No </label>
+        </div>
+
+        <div class="inp">
+          <label>How many days you would like to borrow the book/s:</label> <br> <br>
+          <select name="days">
+            <option value="5 days" id="o1">5 days</option>
+            <option value="6-10 days" id="o2">6-10 days</option>
+            <option value="more than 10 days" id="o3">more than 10 days</option>
+          </select>
+        </div>
+
+        <div class="inp">
+          <label>From which province do you want to receive books:</label> <br> <br>
+          <select name="gov">
+            <option value="Muscat" id="o11">Muscat</option>
+            <option value="Aldaakhilia" id="o22">Aldaakhilia</option>
+            <option value="Alsharqia" id="o33">Alsharqia</option>
+            <option value="Alzaahira" id="o44">Alzaahira</option>
+            <option value="AlBuraimi" id="o55">AlBuraimi</option>
+            <option value="AlWustaa" id="o66">AlWustaa</option>
+            <option value="AlBatinah" id="o77">AlBatinah</option>
+            <option value="Musandam/Dhofar" id="o88">Musandam/Dhofar</option>
+
+          </select>
+          <br>
+          <br>
+        </div>
+
+
+        <div class="container101">
+          <div style="margin-bottom: 6px; margin-left: 46px;">
+            <input type="button" value="calculate" class="B1" id="su" onclick="calculate();">
+            <br> <br>
+            <input type="reset" value="reset" class="B1" onclick="clear1()">
+          </div>
+          <div id="s">
+            <p style="margin-top: 15%;"> Result: <br>
+              <span id="g"> </span>
+            </p>
+
+          </div>
+        </div>
+        <br>
+
+      </form>
+
+
+
+    </div>
+
+  </div>
+
+</body>
+
+<footer>
+  <div class="bottom1">
+      <br>
+      <p> &copy; 2022 Designed by Ethar, Waad, Ghaidaa</p>
+  </div>
+</footer>
+
+</html>

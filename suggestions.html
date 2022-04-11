@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>suggestions</title>
+
+    <!------------------------------------ JavaScript Code------------------------------------------>
+    <script type="Text/JavaScript">
+
+    /* Constructor function for Book objects 
+      function has 3 parameters title, author, description which object has them as properties */
+    function Book(title, author, description){
+       this.bookTitle= title;
+       this.bookAuthor= author;
+       this.bookDesctiption= description;
+    }
+    
+    //create an array with Book object elemnts
+    // so we created the Book object directly inside the array 
+    let booksInformation = [new Book("Henderson The Rain King", "Saul Bellow", "Bellow's glorious, spirited story of an eccentric American millionaire who finds a home of sorts in deepest Africa"),
+                            new Book("All the King's Men", "Robert Penn Warren", "All the King's Men portrays the dramatic political ascent and governorship of Willie Stark, a driven, cynical populist in the American South during the 1930s"),
+                            new Book("Romeo and Juliet", "William Shakespeare", "This lyrical tragedy of two star-crossed lovers and their feuding families is one of the world's most famous love stories"),
+                            new Book("David Copperfield", "Charles Dickens","The story of the abandoned waif who learns to survive through challenging encounters with distress and misfortune"),
+                            new Book("Sudden Death","Alvaro Enrigue","A 1599 Roman tennis match between the Italian painter Caravaggio and the Spanish poet Quevedo represents the way the world changed in their times, in a novel that goes from the execution of Anne Boleyn to Mexico after the conquest"),
+                            new Book("War and Peace","Leo Tolstoy","Epic in scale, War and Peace delineates in graphic detail events leading up to Napoleon's invasion of Russia, and the impact of the Napoleonic era on Tsarist society, as seen through the eyes of five Russian aristocratic families")];
+
+
+    /* displaySuggestinsTable() function with no parameter 
+        this function dynamically display information from the booksInformation arrays 
+        into the XHTML table (empty row table with header row and needed format only)
+        
+        >> The table has 3 column.
+    */
+    function displaySuggestinsTable()
+    {
+        /* to delet table data when call function again,
+           this actually use it when user add new row 
+           so we update the table without display it repeatedly*/
+        document.getElementById('BookTable').innerHTML=""; 
+        var BookTable = document.getElementById('BookTable'); //get table and save it in BookTable variable to use it in this function 
+        // to go through all array element (book object)
+        for (let book of  booksInformation){ 
+            // add table with one row for each object and three cells for 3 object properties 
+            // use it to dynamically disblay data In XHTML table 
+            var tr = BookTable.insertRow(); // insetr table row <tr> (one only for one object)
+            var td = document.createElement('td'); //add <td> element
+            td = tr.insertCell(0); // Adding <td> in <tr>
+            td.innerHTML = book.bookTitle; // display title propertie in first cell in the the row
+            var td = document.createElement('td');//add <td> element
+            td = tr.insertCell(1); // Adding <td> in <tr>
+            td.innerHTML = book.bookAuthor; // display author propertie in second cell in the the row
+            var td = document.createElement('td');//add <td> element
+            td = tr.insertCell(2); // Adding <td> in <tr>
+            td.innerHTML = book.bookDesctiption; // display desctiption propertie in third cell in the the row       
+    } //end of for loop
+    } //end of displaySuggestinsTable function
+
+    /*addUserData() function with no parametr 
+      it use the values of form which user enter to add them into booksInformation as object 
+      then call  displaySuggestinsTable() function to update the table with new row which has inputs user
+    */
+    function addUserData() {
+        // save inputs user in variables 
+        var title = document.getElementById('title').value; 
+        var author = document.getElementById('author').value;
+        var desctiption = document.getElementById('desctiption').value;
+        // add inputs user as new Book object to booksInformation array
+        booksInformation.push(new Book(title, author,desctiption));
+        //call displaySuggestinsTable() function 
+        displaySuggestinsTable();
+    }//end of addUserData function
+
+    // to call displaySuggestinsTable() function when load  XHTML bage 
+    window.onload = () =>  {
+        displaySuggestinsTable();} ;
+
+    /* search() function without parameter, we use it to search for title or author in table 
+       If found it --> alert show Found.
+       If not found it --> alert show Not found.
+    */
+    function search() 
+    {
+        const valueToSearch= document.getElementById('search1').value; //save user input value in variable to search it 
+        var found= false;  //put found to false until found
+        //use loop to go through all booksInformation elemnts
+        for (var info of  booksInformation){
+        //see if it eqaul to any title or author 
+        if (valueToSearch==info.bookTitle || valueToSearch==info.bookAuthor){
+            found= true; //if yes, then found
+        }}  //end of for loop
+
+        //display alert to show found or not
+        if (found) 
+        { alert("YSE Found it! \n The title or author you entered is in suggestions");}
+        else 
+        { alert("Ohhh, Not Found! \n The title or author you entered is not in suggestions");}
+    } //end of seach function 
+
+        </script>
+    <style type="text/css">
+        body {
+            background: linear-gradient(to right, rgb(187, 185, 180), rgb(247, 196, 247));
+
+        }
+
+        table {
+
+            border: thick solid black;
+            border-collapse: collapse;
+        }
+
+        th {
+            border: thin solid black;
+            color: rgb(56, 52, 52);
+            font-size: medium;
+            font-style: bold;
+            font-family: 'cursive';
+        }
+
+        td {
+            border: thin solid black;
+            color: white;
+            font-size: medium;
+            font-style: bold;
+            font-family: 'cursive';
+        }
+
+        label {
+            font-style: bold;
+            color: black;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        h1 {
+            text-align: center;
+            text-shadow: 3px 3px 4px rgb(242, 190, 199);
+            border: thick dotted rgb(144, 110, 115);
+            text-transform: capitalize;
+            font-variant: small-caps;
+            letter-spacing: 10PX;
+            position: relative;
+            left: 40%;
+            top: 30px;
+            padding-left: 35px;
+            padding-right: 35px;
+            padding-top: 15px;
+            width: 350px;
+            height: 75px;
+            font-size: 40px;
+            margin-top: 46px;
+            margin-bottom: 100px;
+
+        }
+
+        h2 {
+            color: rgb(8, 8, 50);
+            font-style: bold;
+            font-family: 'Georgia';
+        }
+
+        h3 {
+            color: rgb(49, 49, 71);
+            text-decoration: underline;
+            font-style: bold;
+            font-family: 'Georgia';
+        }
+
+        h5 {
+            color: rgba(71, 71, 79, 0.79);
+            font-style: bold;
+            font-family: 'Georgia';
+        }
+
+        .botton {
+            border: thick black;
+            border-radius: 5PX;
+            font-size: medium;
+            background-color: rgb(45, 6, 41);
+            color: rgb(254, 254, 254);
+            text-align: center;
+            height: 30px;
+            width: 80px;
+
+        }
+    </style>
+</head>
+
+<!------------------------------ Header ------------------------------>
+<header>
+    <!-- Logo -->
+    <a href="index.html"><img src="logo.png" alt="logo"></a>
+
+    <!-- navigation bar for pages-->
+    <ul class="navigation">
+        <li class="navigation"><a href="index.html">Home page</a></li>
+        <li class="navigation"><a href="login.html">Log in</a></li>
+        <li class="navigation"><a href="aboutUs.html">About us</a> </li>
+        <li class="navigation"><a href="borrowingBooks.html">Borrowing Books</a></li>
+        <li class="navigation"><a href="E_Books.html">E-Books</a> </li>
+        <li class="navigation"><a href="suggestions.html">Suggestions</a></li>
+        <li class="navigation"><a href="funpage.html">Fun</a> </li>
+        <li class="navigation"><a href="calculate.html">Calculate</a> </li>
+        <li class="navigation"><a href="questionnaire.html">Questionnaire</a></li>
+        <li class="navigation"><a href="contactUs.html">Contact Us</a></li>
+
+    </ul>
+</header>
+
+<body>
+    <h1>suggestions</h1>
+
+    <form action="" style="margin: 50px;">
+        <h2>Do you have suggestions for nice and useful books?</h2>
+        <h3 style="margin-top: 15px;">Please enter the book information here and then click the Add button</h3>
+        <h5 style="margin-bottom: 15px; margin-top: 15px;">We will try to provide suggested books for lend or e-books
+        </h5>
+
+
+        <div style="position: absolute; left: 1000px;">
+            <h3>Here You can seach for title or author only</h3>
+            <h5 style="margin-bottom: 15px; margin-top: 15px;">NOTE: You should enter fully name</h5>
+            <button type="button" onclick="search()" class="botton"> Search</button>
+            <input id="search1">
+        </div>
+
+        <label>Title: <input type="text" id="title" style="position: absolute; left: 150px;">
+        </label>
+        <br /> <br />
+        <label>Author: <input type="text" id="author" style="position: absolute; left: 150px;"> </label>
+        <br /><br />
+        <label>Desctiption: <textarea id="desctiption" style="position:absolute; left: 150px;"></textarea> </label>
+        <br /><br />
+        <br />
+        <input type="button" value="ADD" class="botton" onclick=" addUserData() "
+            style="position: relative; left: 100px">
+        <input type="reset" value="RESET" class="botton" style="position: relative; left: 100px;">
+
+    </form>
+    <br /> <br />
+    <table cellpadding="30px" style="margin: 50px;">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Desctiption</th>
+            </tr>
+        </thead>
+
+        <tbody id="BookTable">
+
+
+        </tbody>
+
+    </table>
+
+</body>
+<footer>
+    <div class="bottom1">
+        <br>
+        <p> &copy; 2022 Designed by Ethar, Waad, Ghaidaa</p>
+    </div>
+</footer>
+
+</html>

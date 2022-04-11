@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Register to Boohish Zone</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+
+           background: linear-gradient(to right, rgb(187, 185, 180), rgb(247, 196, 247));
+        }
+
+        .row {
+            width: auto;
+            background: rgba(55, 53, 53, 0.216);
+            border-radius: 10px;
+            box-shadow: 12px 12px 22px rgba(196, 20, 137, 0.549);     
+            
+        }
+
+        .btn1 {
+
+            border: none;
+            outline: none;
+            height: 50px;
+            width: 58%;
+            background-color: rgba(66, 66, 66, 1);
+            color: rgba(189, 189, 189, 1);
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .btn1:hover {
+            background: white;
+            border: 1px solid;
+            color: black;
+
+        }
+     
+    </style>
+
+    <script type="text/javascript" src="validation.js">
+    
+    </script>
+</head>
+<!------------------------------ Header ------------------------------>
+<header>
+    <!-- Logo -->
+    <a href="index.html"><img src="logo.png" alt="logo"></a>
+
+    <!-- navigation bar for pages-->
+    <ul class="navigation">
+        <li class="navigation"><a href="index.html">Home page</a></li>
+        <li class="navigation"><a href="login.html">Log in</a></li>
+        <li class="navigation"><a href="aboutUs.html">About us</a> </li>
+        <li class="navigation"><a href="borrowingBooks.html">Borrowing Books</a></li>
+        <li class="navigation"><a href="E_Books.html">E-Books</a> </li>
+        <li class="navigation"><a href="suggestions.html">Suggestions</a></li>
+        <li class="navigation"><a href="fun.html">Fun</a> </li>
+        <li class="navigation"><a href="questionnaire.html">Questionnaire</a></li>
+        <li class="navigation"><a href="contactUs.html">Contact Us</a></li>
+
+    </ul>
+</header>
+
+<body>
+
+    <section class="Form my-5 mx-5" id="#register" >
+            <div class="row no-guuter">
+                <div class="col-lg-6 px-3 pt-3">
+                    <br />
+                    <h1 class="font-weight-bold py-2" style="position:relative; left: 500px;">Register new account</h1>
+                    <form name="RegForm" action="https://formsubmit.co/bookishzone2022@gmail.com"  method="post">
+                        <div class="form-row" style="position:relative; left: 500px;" >
+                            <div class="col-lg-7">
+                                <lable >Fisrt Name <input type="text" name="firstName" class="form-control my-2 p-3" required> </lable>
+                                <lable >Last Name <input type="text" name="lastName" class="form-control my-2 p-3" required> </lable>
+                                <lable >User Name <input type="text" name="UserName" class="form-control my-2 p-3" required> </lable>
+                            </div>
+                        </div>
+                    
+                
+                        <div class="form-row" style="position:relative; left: 500px;" >
+                            <div class="col-lg-7">
+                                <lable >Email <input type="email" name="email" class="form-control my-2 p-3" required> </lable>
+                                <lable >Phone number <input type="text"  name="phoneNumber" class="form-control my-2 p-3" required> </lable>
+                            </div>
+                        </div>
+                        <div class="form-row" style="position:relative; left: 500px;" >
+                            <div class="col-lg-7">
+                                <lable >Phone number <input type="text"  name="phoneNumber" class="form-control my-2 p-3" required> </lable>
+                                <lable >Confirm password <input type="password" name="password2"  class="form-control my-2 p-3" required> </lable>
+                            </div>
+                        </div>
+    
+
+                       
+                        <div class="form-row" >
+                            <div class="col-lg">
+                                <button style="position: relative; left: 500px;" type="submit" value="submit" name="submit" class="btn1 mt-3 mb-5"> Register </button>
+                            </div>
+                        </div>
+                        <p style="position: relative; left: 500px;" >You have an account? <a href="login.html#login">Login here</a></p>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+</body>
+</form>
+ 
+<script type="text/javascript">
+    document.forms["RegisterForm"].onsubmit =validationForm;
+</script>
+
+<footer>
+    <div class="bottom1">
+        <br>
+        <p> &copy; 2022 Designed by Ethar, Waad, Ghaidaa</p>
+    </div>
+</footer>
+
+</html>

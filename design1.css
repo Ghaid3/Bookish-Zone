@@ -1,0 +1,135 @@
+
+ tr {
+    font-size: larger;
+    width: 30px;
+
+}
+
+body {
+    background-image: url(book.png);
+
+}
+
+.box1 {
+    padding-top: 35px;
+    padding-left: 20px;
+    padding-bottom: 30px;
+    margin: 200px;
+    background-color: #fabfde;
+    border: white;
+    align-self: center;
+    position: relative;
+
+
+}
+.box2{
+    padding-left: 67px;
+    padding-top: 15px; 
+    width: 350px;
+    height: 75px;
+    border: dashed rgb(19, 17, 17);
+    /* margin-left: 550px; */
+    position: absolute;
+    left: 33%;
+    font-size: 40px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular';
+}
+.box3{
+    padding-top: 15px;
+    padding-left: 20px;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 160px;
+    margin-bottom: 90px;
+    background-color: #fabfde;
+    border: white;
+    align-self: center;
+    position: relative;
+
+}
+.box4{
+    margin-top: 160px;
+    margin-bottom: 100px;
+}
+.h1Style{
+    margin-top: 30px;
+
+}
+label{
+    padding-left: 5px;
+}
+input{
+    margin-left: 12px;
+    width:2em;
+}
+label input{
+    width:2em;
+
+}
+.container1{
+display: flex;
+}
+#e11 , #e22  , #e33 , #e44 , #e55{
+padding-right: 26px;
+}
+.container2 {
+float: left; 
+width: 250px; 
+height: 35px;
+margin: 15px;
+padding: 10px;
+border: 1px solid #aaaaaa;
+}
+
+
+.dragArea {
+    height: 330px;
+    width: 450px;
+    border: 2px solid black;
+    float: left;
+    margin: 3%;
+    margin-left:100px;
+}
+
+.area {
+    height: 100px;
+    width: 100px;
+    border: 2px solid #ffffff;
+}
+
+.contain {
+
+    height: 300px;
+    width: 300px;
+    border: #fabfde;
+    margin-top: 9%;
+    margin-left: 60%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 33.3333333%);
+
+
+}
+.puzzle {
+   float: none;
+    width: 180px;
+    height: 80px;
+    font-size: 30px;
+    font-family: 'Times New Roman';
+    background-color: #6830cf;
+    color: white;
+    border-radius: 20px;
+    margin-right: 40px;
+   
+}
+.box{
+    margin-top: 100px;
+    margin-left: 350px;
+    display: flex;
+    
+
+}
+.box6{
+    display: flex;
+    margin-top: 30px;
+    margin-left: 150px;
+}

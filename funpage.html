@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="design1.css">
+    <script type="text/javascript" src="fun.js"></script>
+
+</head>
+
+<!------------------------------ Header ------------------------------>
+<header>
+    <!-- Logo -->
+    <a href="index.html"><img src="logo.png" alt="logo"></a>
+
+    <!-- navigation bar for pages-->
+    <ul class="navigation">
+        <li class="navigation"><a href="index.html">Home page</a></li>
+        <li class="navigation"><a href="login.html">Log in</a></li>
+        <li class="navigation"><a href="aboutUs.html">About us</a> </li>
+        <li class="navigation"><a href="borrowingBooks.html">Borrowing Books</a></li>
+        <li class="navigation"><a href="E_Books.html">E-Books</a> </li>
+        <li class="navigation"><a href="funpage.html">Fun</a> </li>
+        <li class="navigation"><a href="calculate.html">Calculate</a> </li>
+        <li class="navigation"><a href="questionnaire.html">Questionnaire</a></li>
+        <li class="navigation"><a href="contactUs.html">Contact Us</a></li>
+
+    </ul>
+</header>
+
+<body>
+
+    <h1
+        style=" color:  white; font-size: 60px; text-align: center;padding-top: 10px;padding-bottom: 10px; margin-top: 100px; font-family: cursive; background-color:#880e4f; border-style: double;">
+        Play With Us!</h1>
+
+    <div class="box1">
+        <h2 class="box2">
+            Sorting Game</h2>
+        <div class="box3">
+        <p style="font-size: 20px;font-weight: bold; text-align:center ; margin-bottom: 18px; font-family: 'Times New Roman', Times, serif;">
+            Let's test your knowledge in Classic Literature Authors!</p>
+
+
+        <table cellpadding="5px" align="center" border="thick white" style="text-align: justify; margin-left: 20%; ">
+            <tr>
+                <td>1. "It matters not what someone is born, but what <br> they grow to be."</td>
+            </tr>
+            <tr>
+                <td>2. "Not all those who wander are lost."</td>
+            </tr>
+            <tr>
+                <td>3. "Made weak by time and fate, but strong in will <br> to strive, to seek, to find, and not to
+                    yield."</td>
+            </tr>
+            <tr>
+                <td>4. "We are such stuff as dreams are made on, and <br> our one little life is rounded with a sleep."
+                </td>
+            </tr>
+            <tr>
+                <td>5. "You are a wonderful creation. You know more <br> than you think you know,
+                    just as you know less <br> than you want to know."</td>
+            </tr>
+        </table>
+
+        <h2 style="margin-top: 30px; margin-bottom: 30px; margin-left: 10%;">Please put the correct name of the author who wrote the quote corresponding to each number, using the table above: </h2>
+        <div style="margin-left: 10%;">
+  <div class="container1" ondrop="drop1(event)" ondragover="allowDrop1(event) " ondragstart="ToDrag(event)">
+    <h3 ondragstart="ToDrag(event)" draggable="true" id="e11"> 
+      Alfred Lord Tennyson
+    </h3>
+    <h3 ondragstart="ToDrag(event)" draggable="true" id="e22"> 
+      Oscar Wilde    </h3>
+    <h3 ondragstart="ToDrag(event)" draggable="true" id="e33"> 
+      J R R Tolkein
+    </h3>
+    <h3 ondragstart="ToDrag(event)" draggable="true" id="e44"> 
+      William Shakespeare 
+    </h3>
+    <h3 ondragstart="ToDrag(event)" draggable="true" id="e55"> 
+      J.K. Rowling
+    </h3>
+
+    
+  </div>
+  
+  <table style="margin-top: 3%;">
+    <tr>
+      <td style="font-size: 22px; font-weight: bolder;">1.</td>
+      <td> <div class="container2" ondrop="drop1(event)" ondragover="allowDrop1(event)" id="55"></div>  </td>
+    </tr>
+    <tr>
+      <td style="font-size: 22px; font-weight: bolder;">2.</td>
+      <td> <div class="container2" ondrop="drop1(event)" ondragover="allowDrop1(event)" id="33"></div>  </td>
+    </tr>
+    <tr>
+      <td style="font-size: 22px; font-weight: bolder;">3.</td>
+      <td> <div class="container2" ondrop="drop1(event)" ondragover="allowDrop1(event)" id="11"></div> </td>
+    </tr>
+    <tr>
+      <td style="font-size: 22px; font-weight: bolder;">4.</td>
+      <td> <div class="container2" ondrop="drop1(event)" ondragover="allowDrop1(event)" id="44"></div>  </td>
+    </tr>
+    <tr>
+      <td style="font-size: 22px; font-weight: bolder;">5.</td>
+      <td> <div class="container2" ondrop="drop1(event)" ondragover="allowDrop1(event)" id="22"></div> </td>
+    </tr>
+  </table>
+</div>
+
+  <div class="box6">
+    <button class="puzzle" onclick="check1()" id="che1" >Check</button>
+    
+    <form action="funpage.html">
+      <button class="puzzle" type="submit">Try again</button>
+    </form>
+    
+    </div>
+  
+        
+    </div>
+
+
+        <h2 class="box2">Puzzle Game</h2>
+        <br>
+        <div class="box4">
+            <p style="text-align:center;font-size:x-large;margin:5%; font-family: Times New Roman;font-weight: bold;">
+                Move the scattered pictures in the left side box to the right side box  and arrange <br>  the pictures,
+                 to get the full and correct image of an old classic library.
+            </p>
+        
+        <div class="dragArea" ondragstart="StartDrag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <img src="5.jpg" height="100" width="100" id="5" />
+          <img src="7.jpg" height="100" width="100" id="7" />
+          <img src="1.jpg" height="100" width="100" id="1" />
+          <img src="3.jpg" height="100" width="100" id="3" />
+          <img src="4.jpg" height="100" width="100" id="4" />
+          <img src="6.jpg" height="100" width="100" id="6" />
+          <img src="2.jpg" height="100" width="100" id="2" />
+          <img src="8.jpg" height="100" width="100" id="8" />
+          <img src="9.jpg" height="100" width="100" id="9" />
+          
+        </div>
+        
+        
+        <section class="contain">
+          <div id="a1" class="area" ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="StartDrag(event)"></div>
+          <div id="a2" class="area" ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="StartDrag(event)"></div>
+          <div id="a3" class="area" ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="StartDrag(event)"></div>
+          <div id="a4" class="area" ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="StartDrag(event)"></div>
+          <div id="a5" class="area" ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="StartDrag(event)"></div>
+          <div id="a6" class="area" ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="StartDrag(event)"></div>
+          <div id="a7" class="area" ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="StartDrag(event)"></div>
+          <div id="a8" class="area" ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="StartDrag(event)"></div>
+          <div id="a9" class="area" ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="StartDrag(event)"></div>
+        
+        </section> 
+        
+        
+        
+        <div class="box">
+        <button class="puzzle" onclick="check()" id="che" >Check</button>
+        
+        
+        <form action="funpage.html">
+          <button class="puzzle" type="submit">Try again</button>
+        </form>
+        
+        </div>
+     
+        </div>
+    </div>
+    
+
+
+</body>
+<footer>
+  <div class="bottom1">
+      <br>
+      <p> &copy; 2022 Designed by Ethar, Waad, Ghaidaa</p>
+  </div>
+</footer>
+
+</html>

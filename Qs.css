@@ -1,0 +1,53 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url(books.Jpg);
+    background-size: auto ;
+    height: auto;
+    
+}
+
+.parent{
+    background-color: rgb(182, 175, 175);
+    width: 600px;
+    height: 600px;
+    margin: 50px auto;
+    text-align: center;
+  text-align: center;
+  border-radius: 20px;
+  
+}
+
+h1{
+    text-align: center;
+    position: relative;
+    top: 60px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+   
+}
+
+
+
+
+.cont{
+    margin: 0% auto;
+    background-color:(182, 175, 175);
+    margin-top: 160px;
+    height: 400px;
+}
+
+.row{
+    margin-top: 15px;
+
+}
+
+
+.card
+{
+    margin-top: 15px;
+}
+

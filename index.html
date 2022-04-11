@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        addEventListener("load", () => { // "load" is safe but "DOMContentLoaded" starts earlier
+            var index = 0;
+            const slides = document.querySelectorAll(".img");// constructor for appear image
+            const classHide = "img", count = slides.length;// constructor for hide image
+            nextSlide();
+            // this function to control the image gallery
+            function nextSlide() {
+                slides[(index++) % count].classList.add(classHide);// imge hat will apper
+                slides[index % count].classList.remove(classHide);// imge hat will hide to put other image
+                setTimeout(nextSlide, 3000);// change betwwen imgs every 3s
+            }
+        });
+    </script>
+
+    <style>
+        li.Benefits {
+            color: #1a237e;
+            font-size: 20px;
+            font-family: 'Bahnschrift SemiBold';
+            font-weight: bold;
+        }
+
+        h1 a {
+            font-variant: small-caps;
+            font-family: 'Arial Narrow Bold', sans-serif;
+            color: #880e4f;
+        }
+
+        .img {
+            display: none;
+        }
+    </style>
+
+</head>
+<!------------------------------ Header ------------------------------>
+<header>
+    <!-- Logo -->
+    <a href="index.html"><img src="logo.png" alt="logo"></a>
+
+    <!-- navigation bar for pages-->
+    <ul class="navigation">
+        <li class="navigation"><a href="index.html">Home page</a></li>
+        <li class="navigation"><a href="login.html">Log in</a></li>
+        <li class="navigation"><a href="aboutUs.html">About us</a> </li>
+        <li class="navigation"><a href="borrowingBooks.html">Borrowing Books</a></li>
+        <li class="navigation"><a href="E_Books.html">E-Books</a> </li>
+        <li class="navigation"><a href="suggestions.html">Suggestions</a></li>
+        <li class="navigation"><a href="funpage.html">Fun</a> </li>
+        <li class="navigation"><a href="calculate.html">Calculate</a> </li>
+        <li class="navigation"><a href="questionnaire.html">Questionnaire</a></li>
+        <li class="navigation"><a href="contactUs.html">Contact Us</a></li>
+
+    </ul>
+</header>
+
+
+<body>
+    <pre style="text-align:left;width:30%;float:left; position: relative; left: 50px;" >
+        <ul type="circle">
+        <h2 style="font-family: 'Wide Latin'; color: #880e4f;">Benefits of reading:</h2>
+        <li class="Benefits">Reading dares you to grow</li>
+        <li class="Benefits">Reading allows you to experience multiple realities</li>
+        <li class="Benefits">Reading challenges your perspective</li>
+        <li class="Benefits">Reading helps you remember</li>
+        <li class="Benefits">Reading helps you forget</li>
+        <li class="Benefits">Reading means you don’t have to be alone</li>
+        <li class="Benefits">Reading brings life</li>
+        </ul>
+       
+        </pre>
+
+    <section style="position: relative; left:350px; top: 20px;">
+        <img class="img" src="homePage2.jpg" alt="book image">
+        <img class="img" src="homePage3.jpg" alt="book image">
+        <img class="img" src="homePage5.png" alt="book image">
+
+
+    </section> 
+
+
+    <br /> <br />
+
+
+    <br /> <br />
+
+    <table border="20"  cellpadding="80px" style="border-radius:15px; background-color: #f183be6b;; border-color: #880e4f; position: relative; left: 350px;">
+        <caption>
+            <h1 style="text-align: center; font-family:'Lucida Sans';">WELCOME TO BORROWING AND LENDING SECTION</h1>
+        </caption>
+        <tr>
+            <th>
+                <h1><a style="text-decoration: none;" href="borrowingBooks.html#borrow">I want to borrow</a></h1>
+            </th>
+            <th id="lend">
+                <h1><a style="text-decoration: none;" href="lend.html#lend">I want to lend</a></h1>
+            </th>
+        </tr>
+
+    </table>
+
+    <br /> <br />
+    <pre style="color:#b71c1c; font-weight: bold; font-size: 30px; font-family: 'Showcard Gothic'; text-align: center;   border: thick dotted rgb(83, 5, 17); width: fit-content; position: relative; left: 500px; border-radius: 80px;">
+         
+
+        "Losing yourself in a book is          
+           the ultimate relaxation"          
+       <pre>Dr. David Lewis</pre>
+                       </pre>
+
+       <br /> <br />
+
+    <p
+        style="background-color: #e8ccc3; font-size: 43px; color:#6b6867; text-align: center; font-weight: bold; animation-name: initial; animation-duration: 6s; ">
+        <!--Get banner to move from right to left-->
+        <marquee width="1000px" direction="right" height="30px" style="font-size: 20px;">
+            <!-- banner content-->
+            <script>//this part to determine both time and date (it is located in banner )
+                var date = new Date();//new object for date function
+                var day = date.getDate();// use getdate function to determine the day
+                var month = date.getMonth() +1 ;// use getmonth function to determine the month // +1 to determine current month
+                var year = date.getFullYear();// use getyear function to determine the year object
+                var hour = date.getHours();//  to determine the month
+                var min = date.getMinutes(); //  to determine the minute
+                var sec = date.getSeconds();//  to determine the second
+                // format of date
+                var dateFormat = day + "/" + month  + "/" + year;// all objects for date
+                var timeFormat = hour + ":" + min + ":" + sec;// all objects for to determine current time
+                // text in banner with current time and date
+
+                document.write("Welcome To The BOOKISH ZONE Website The date is " + " " + dateFormat + " and the time is " + timeFormat);
+//end of js
+            </script>
+
+        </marquee>
+    </p> 
+    
+    <br />    
+   
+</body>
+
+<footer>
+    <div class="bottom1">
+        <br>
+        <p> &copy; 2022 Designed by Ethar, Waad, Ghaidaa</p>
+    </div>
+</footer>
+
+
+</html>
